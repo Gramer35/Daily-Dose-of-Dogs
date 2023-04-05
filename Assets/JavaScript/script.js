@@ -1,7 +1,6 @@
 function getApi() {
     // fetch requests get a random dog image and a random dog fact
     var imageUrl = 'https://dog.ceo/api/breeds/image/random';
-    var factUrl = 'http://dog-api.kinduff.com/api/facts';
   
     fetch(imageUrl)
       .then(function (response) {
@@ -15,22 +14,31 @@ function getApi() {
         console.error(error);
       });
   
-    fetch(factUrl)
-      .then(function (response) {
-        return response.json();
+    //Section for Giphy JS
+
+    let key = 'FN2y1TfECIL5ESAWifTW0uzZCqrkRJQg';
+    let gifType = 'cute dogs';
+    let gifURL = 'https://api.giphy.com/v1/gifs/search?api_key=FN2y1TfECIL5ESAWifTW0uzZCqrkRJQg&q=cute dogs';
+    
+    fetch(gifURL)
+      .then(response => response.json())
+      .then(content => {
+        //Logs to check arrays and status
+        console.log(content.data);
+        console.log('META', content.meta);
+        i = Math.floor(Math.random() * content.data.length)
+        document.getElementById('dog-gif').setAttribute('src', content.data[i].images.downsized.url);
+
       })
-      .then(function (data) {
-        // Select a random fact from the array of facts and set the text content of the fact element to it
-        var factIndex = Math.floor(Math.random() * data.facts.length);
-        document.getElementById('dog-fact').textContent = data.facts[factIndex];
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  }
+      .catch(err =>{
+        console.error('error');
+      });  
+  
+    }
   
   // Call the getApi function when the page loads
   window.addEventListener('load', getApi);
   
-  //Updated  
+  //Updated 
+
   
