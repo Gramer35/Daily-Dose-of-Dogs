@@ -28,4 +28,9 @@ body {
     margin: 0 auto;
     max-width: 100%;
   }
+
+  /* Nav Bar Background */
+  .nav-wrapper {
+    background: #4d6d9a;
+  }
   
