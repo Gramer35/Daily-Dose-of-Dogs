@@ -15,10 +15,10 @@ function getApi() {
       });
   
     //Section for Giphy JS
-
-    let key = 'FN2y1TfECIL5ESAWifTW0uzZCqrkRJQg';
-    let gifType = 'cute dogs';
     let gifURL = 'https://api.giphy.com/v1/gifs/search?api_key=FN2y1TfECIL5ESAWifTW0uzZCqrkRJQg&q=cute dogs';
+    
+    gifBoxes = document.querySelectorAll('.gif');
+    console.log(gifBoxes);
     
     fetch(gifURL)
       .then(response => response.json())
@@ -26,9 +26,10 @@ function getApi() {
         //Logs to check arrays and status
         console.log(content.data);
         console.log('META', content.meta);
-        i = Math.floor(Math.random() * content.data.length)
-        document.getElementById('dog-gif').setAttribute('src', content.data[i].images.downsized.url);
-
+        gifBoxes.forEach((e) => {
+          i = Math.floor(Math.random() * content.data.length)
+          e.setAttribute('src', content.data[i].images.downsized.url);
+        });
       })
       .catch(err =>{
         console.error('error');
@@ -38,7 +39,6 @@ function getApi() {
   
   // Call the getApi function when the page loads
   window.addEventListener('load', getApi);
-  
   //Updated 
 
   
