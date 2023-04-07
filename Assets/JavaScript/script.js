@@ -8,7 +8,12 @@ function getApi() {
       })
       .then(function (data) {
         // Set the src attribute of the img element to the retrieved image
-        document.getElementById('dog-image').setAttribute('src', data.message);
+        console.log(data)
+        picBoxes = document.querySelectorAll('.pic');
+        picBoxes.forEach((e) => {
+          e.setAttribute('src', data.message)
+        });
+        // document.getElementById('dog-image').setAttribute('src', data.message);
       })
       .catch(function (error) {
         console.error(error);
