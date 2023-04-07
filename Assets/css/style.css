@@ -34,4 +34,22 @@ body {
   .nav-wrapper {
     background: #4d6d9a;
   }
+
+  .gifContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+  }
+
+  .btn-large.gifButton {
+    max-width: 200px;
+    margin: 5%;
+    align-self: center;
+    background-color: #4d6d9a;
+  }
+
+  .btn-large.gifButton:hover {
+    background-color: #4d6d9a;
+  }
+  
   
