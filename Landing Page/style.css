@@ -1,5 +1,5 @@
 .background-image {
-	background-image: url('path/to/image.jpg');
+	background-image: url('/Assets/images/image.jpg');
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
