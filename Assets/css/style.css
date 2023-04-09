@@ -1,4 +1,8 @@
 /* Set background color and font style for the page */
+* {
+  color: white;
+}
+
 body {
     background-color: #313030;
     font-family: Arial, sans-serif;
@@ -60,5 +64,19 @@ body {
   .btn-large.picButton:hover {
     background-color: #4d6d9a;
   }
-  
-  
+
+  form {
+    position: absolute;
+    align-items: flex-end;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    right: 15%;
+    
+  }
+
+  #searchbtn {
+    background-color: #4d6d9a;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
