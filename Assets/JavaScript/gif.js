@@ -62,7 +62,7 @@ function moveToAdopt(event) {
 function moveToLanding(event) {
   event.preventDefault();
 
-  const landingPage = '/Landing Page/index.html'
+  const landingPage = '/index.html'
   location.assign(landingPage);
   
 }
