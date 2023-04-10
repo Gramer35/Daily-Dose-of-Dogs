@@ -14,6 +14,9 @@ body {
   
   /* Center the page content */
   .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
@@ -72,35 +75,41 @@ body {
     margin: auto;
     flex-direction: column;
     right: 15%;
-    
+
   }
 
   #searchbtn {
+    align-self: center;
     background-color: #a26617;
     padding-left: 20px;
     padding-right: 20px;
   }
-
+  
   input::placeholder {
     color: black;
   }
-
-  /* @media screen and (max-width: 1250px){
+  
+  @media screen and (max-width: 1250px){
     .container{
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
-    .form{
-      align-items: center;
-      justify-self: center;
-
-      position: relative;
-      align-items: flex-start;
+    
+    form {
+      position: unset;
+      align-items: flex-end;
       display: flex;
       margin: auto;
       flex-direction: column;
-      right: 0%;
+      right: 15%;
+  
     }
-  } */
+
+    #searchbtn {
+      align-self: center;
+      background-color: #a26617;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
