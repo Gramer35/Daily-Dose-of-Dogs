@@ -1,38 +1,35 @@
-function getApi() {
-  // Fetch Request for Dog Gifs
-  let gifURL = 'https://api.giphy.com/v1/gifs/search?api_key=FN2y1TfECIL5ESAWifTW0uzZCqrkRJQg&q=cute dogs';
 
-  fetch(gifURL)
+document.getElementById('searchbtn').addEventListener('click', event => {
+    event.preventDefault();
+    let gifURL = 'https://api.giphy.com/v1/gifs/search?api_key=FN2y1TfECIL5ESAWifTW0uzZCqrkRJQg&q='
+    let userInput = document.getElementById('search').value.trim();
+    gifURL = gifURL.concat(userInput);
+    console.log(gifURL);
+
+    //Fetch for search
+    fetch(gifURL)
     .then(response => response.json())
     .then(content => {
-      //Logs to check arrays and status
-      console.log(content.data);
-      console.log('META', content.meta);
-      // i = Math.floor(Math.random() * content.data.length);
-      let i = 0;
-      document.getElementById('gif').setAttribute('src', content.data[i].images.original.url);
-      gifbtn = document.getElementById('gifbtn');
-      gifbtn.addEventListener('click', function () {
-        i++;
+        console.log(content);
+        console.log('META', content.meta);
+        let i = 0;
         document.getElementById('gif').setAttribute('src', content.data[i].images.original.url);
-      });
+
+        let gifbtn = document.getElementById('gifbtn2');
+        gifbtn.style.visibility='visible';
+
     })
-    .catch(err => {
-      console.error('error');
-    });
-
-}
-
-// Call the getApi function when the page loads
-window.addEventListener('load', getApi);
+    .catch(err =>{
+        console.error(err);
+    })
+})
 
 
 const toGifs = document.getElementById('gifs');
 const toPhotos = document.getElementById('photos');
 const toAdopt = document.getElementById('adopt');
 const toLanding = document.getElementById('landingPage');
-const toSearch = document.getElementById('toSearch');
-
+const toSearch = document.getElementById('searchbtn');
 
 
 function moveToGifs(event) {
@@ -66,15 +63,8 @@ function moveToLanding(event) {
 
   const landingPage = '/index.html'
   location.assign(landingPage);
+
   
-}
-
-
-function moveToSearch(event) {
-  event.preventDefault();
-
-  const searchPage = './Search.html'
-  location.assign(searchPage);
 }
 
 
