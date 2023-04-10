@@ -58,10 +58,25 @@ body {
   #gifbtn2 {
     max-width: 200px;
     margin: 5%;
-    align-self: center;
     background-color: #a26617;
     visibility: hidden;
-    
+  }
+
+  #gifContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  #search {
+    color: black;
+  }
+
+  #toSearch {
+    max-width: 60%;
+    margin: 5%;
+    align-self: center;
+    background-color: #a26617;
   }
 
   .btn-large.picButton {
@@ -77,13 +92,16 @@ body {
   }
 
   form {
-    position: absolute;
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     margin: auto;
     flex-direction: column;
-    right: 15%;
+  }
 
+  #historybtn {
+    margin: 5%;
+    align-self: center;
+    background-color: #a26617;
   }
 
   #searchbtn {
