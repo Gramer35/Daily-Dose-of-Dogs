@@ -25,10 +25,15 @@ When the user selects Photos, this is the page they will see! The photo will be 
 
 ![Page where the user can shuffle through still photos of dogs!](Assets/images/picpage.png)
 
+This page allows the user to search for a certain breed in gif
+
+![Where the user can search for a specific dog breed in gif](Assets/images/search.png)
+
 This last page is where the user can search for a local animal shelter! Feature isn't quite ready, but in the future will be a one stop spot for finding your local shelter!
 
 
 ![Where the user can search for a local animal shelter! Under Construction](Assets/images/adoptpage.png)
+
 
 
 
