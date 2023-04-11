@@ -68,7 +68,7 @@ function getApi() {
   function moveToLanding(event) {
     event.preventDefault();
 
-    const landingPage = '../JavaScript/index.html'
+    const landingPage = './JavaScript/index.html'
     location.assign(landingPage);
     
   }
